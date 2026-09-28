@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 <style>
 :root{
   --bg:#F5F7FA; --bg2:#FFFFFF; --card:#FFFFFF; --ink:#0F172A; --muted:#556070; --line:#E2E8F0;
@@ -67,6 +68,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;color:var(--muted);box-shadow:var(--shadow);margin-bottom:26px}
 .status .pulse{width:22px;height:22px;border-radius:50%;background:color-mix(in srgb,var(--ok) 18%,transparent);display:grid;place-items:center}
 .status .pulse::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.profile-wrap{display:inline-block;position:relative;margin-bottom:28px}
+.profile-wrap::before{content:"";position:absolute;inset:-3px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent2));z-index:0}
+.profile-photo{width:200px;height:240px;border-radius:18px;object-fit:cover;object-position:center center;display:block;position:relative;z-index:1;border:3px solid var(--bg2);box-shadow:var(--shadow)}
+@media(max-width:600px){.profile-photo{width:160px;height:190px}}
 .hero h1{font-size:clamp(42px,6.4vw,78px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:0 0 22px}
 .hero h1 .grad{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lede{font-size:clamp(18px,1.9vw,20px);color:var(--muted);max-width:46ch;margin:0 0 32px}
@@ -139,7 +144,8 @@ h2{font-size:clamp(32px,4.4vw,52px);letter-spacing:-.035em;line-height:1.05;marg
 .links a{font-size:14px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
 .links a:hover{border-color:var(--accent);color:var(--accent)}
 .chips{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0 0 16px}
-.chips li{font-size:13px;padding:5px 11px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.chips li{font-size:13px;padding:5px 11px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--line);display:inline-flex;align-items:center;gap:5px}
+.chips li i[class^="devicon"]{font-size:15px;line-height:1}
 .eq{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:16px;margin:4px 0 20px;border-radius:16px;background:var(--bg);border:1px solid var(--line);font-family:var(--mono);font-size:13.5px}
 .eq .term{padding:4px 9px;border-radius:8px;background:var(--card);border:1px solid var(--line)}
 .eq .term.total{background:var(--accent);color:var(--on-accent);border-color:transparent}
@@ -218,6 +224,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <div class="wrap hero">
     <div class="hero-grid">
       <div>
+        <div class="profile-wrap"><img src="wafa-photo.png" alt="Wafa Salah" class="profile-photo"></div>
         <h1 data-i18n-html="hero-h1">Hi, I'm Wafa. I build <span class="grad">backends that move money</span> and people.</h1>
         <p class="lede" data-i18n="hero-lede">Full-stack software engineer with 5+ years in PHP, Laravel, React.js and Vue.js. Today I build Sportra and Evencia, two platforms live in Qatar.</p>
         <div class="btns">
@@ -294,7 +301,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             <li data-i18n="sp-5">Moderation tools that passed App Store review</li>
             <li data-i18n="sp-6">GitHub Actions CI/CD and a staging server</li>
           </ul>
-          <ul class="chips"><li>Laravel 12</li><li>MySQL</li><li>React + MUI</li><li>Flutter API</li><li>SkipCash</li><li>GitHub Actions</li></ul>
+          <ul class="chips"><li><i class="devicon-laravel-plain colored"></i>Laravel 12</li><li><i class="devicon-mysql-plain colored"></i>MySQL</li><li><i class="devicon-react-original colored"></i>React + MUI</li><li><i class="devicon-flutter-plain colored"></i>Flutter API</li><li>SkipCash</li><li><i class="devicon-github-original"></i>GitHub Actions</li></ul>
           <div class="links"><a href="https://sportrago.com/" target="_blank" rel="noopener">Visit sportrago.com</a><a href="https://sportrago.com/documentation/" target="_blank" rel="noopener">Help Center</a></div>
         </article>
 
@@ -308,7 +315,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             <li data-i18n="ev-3">Flights, hotels and concierge for guests</li>
             <li data-i18n="ev-4">Email, WhatsApp and SMS campaigns</li>
           </ul>
-          <ul class="chips"><li>Laravel</li><li>React.js</li><li>MySQL</li></ul>
+          <ul class="chips"><li><i class="devicon-laravel-plain colored"></i>Laravel</li><li><i class="devicon-react-original colored"></i>React.js</li><li><i class="devicon-mysql-plain colored"></i>MySQL</li></ul>
           <div class="links"><a href="https://evencia.io/" target="_blank" rel="noopener">Visit evencia.io</a></div>
         </article>
 
@@ -316,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
           <h3 data-i18n="docs-title">Docs with an AI assistant</h3>
           <p class="kind" data-i18n="docs-kind">Documentation for both platforms</p>
           <p data-i18n="docs-desc">I wrote and published the Sportra Help Center and rebuilt the Evencia docs on Next.js and Fumadocs. Its "Ask AI" feature finds the right pages and streams an answer from an LLM.</p>
-          <ul class="chips"><li>Next.js</li><li>Fumadocs</li><li>Docusaurus</li><li>PHP</li><li>OpenRouter</li></ul>
+          <ul class="chips"><li><i class="devicon-nextjs-plain"></i>Next.js</li><li>Fumadocs</li><li><i class="devicon-docusaurus-plain colored"></i>Docusaurus</li><li><i class="devicon-php-plain colored"></i>PHP</li><li>OpenRouter</li></ul>
           <div class="links"><a href="https://evencia.io/docs/" target="_blank" rel="noopener">Evencia docs</a></div>
         </article>
 
@@ -324,7 +331,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
           <h3 data-i18n="crm-title">CRM platform</h3>
           <p class="kind" data-i18n="crm-kind">SW Consulting, 2024 to 2025</p>
           <p data-i18n="crm-desc">Customer management, workflow automation and role-based access, with email and WhatsApp notifications, PDF generation, imports, exports and reporting.</p>
-          <ul class="chips"><li>Laravel</li><li>MySQL</li><li>Third-party APIs</li></ul>
+          <ul class="chips"><li><i class="devicon-laravel-plain colored"></i>Laravel</li><li><i class="devicon-mysql-plain colored"></i>MySQL</li><li>Third-party APIs</li></ul>
         </article>
 
         <article class="tile t-car">
@@ -335,7 +342,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             </div>
             <div>
               <p data-i18n="car-desc">Web and mobile app from design to launch, with maps, ride price calculation, online payments and ticketing, built in a Scrum team.</p>
-              <ul class="chips"><li>Ionic</li><li>Angular</li><li>Laravel</li><li>MySQL</li></ul>
+              <ul class="chips"><li><i class="devicon-ionic-original colored"></i>Ionic</li><li><i class="devicon-angularjs-plain colored"></i>Angular</li><li><i class="devicon-laravel-plain colored"></i>Laravel</li><li><i class="devicon-mysql-plain colored"></i>MySQL</li></ul>
             </div>
           </div>
         </article>
@@ -351,22 +358,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
       <ol class="timeline" reversed>
         <li class="current"><div class="tl-card">
-          <h3 data-i18n="job1-title">Full-Stack Software Engineer</h3><span class="when">May 2025 – now</span>
+          <h3 data-i18n="job1-title">Full-Stack Software Engineer</h3><span class="when" data-i18n="job1-when">Current</span>
           <span class="org">United Systema</span>
           <p data-i18n="job1-desc">Building Sportra and Evencia, two production SaaS platforms live in Qatar: APIs, payments and payouts, CI/CD, servers and documentation.</p>
         </div></li>
         <li><div class="tl-card">
-          <h3 data-i18n="job2-title">Backend Laravel Developer</h3><span class="when">Feb 2024 – Mar 2025</span>
+          <h3 data-i18n="job2-title">Backend Laravel Developer</h3>
           <span class="org">SW Consulting</span>
           <p data-i18n="job2-desc">Built a CRM with workflow automation, role-based access, notifications, reporting and API integrations, and deployed releases to the server.</p>
         </div></li>
         <li><div class="tl-card">
-          <h3 data-i18n="job3-title">Freelance Full-Stack Developer</h3><span class="when">Jan 2021 – Dec 2023</span>
+          <h3 data-i18n="job3-title">Freelance Full-Stack Developer</h3>
           <span class="org">Independent</span>
           <p data-i18n="job3-desc">Delivered custom websites, e-commerce stores and business sites with Laravel and Angular, from design and payments to deployment and maintenance.</p>
         </div></li>
         <li><div class="tl-card">
-          <h3 data-i18n="job4-title">Web &amp; Mobile Developer</h3><span class="when">Feb 2020 – Dec 2020</span>
+          <h3 data-i18n="job4-title">Web &amp; Mobile Developer</h3>
           <span class="org">Confledis, Paris, France</span>
           <p data-i18n="job4-desc">Built a web and mobile carpooling app with Ionic, Angular, Laravel and MySQL in an Agile team using Jira.</p>
         </div></li>
@@ -382,17 +389,62 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
       <div class="skills">
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/></svg></i><span data-i18n="skill-backend">Backend</span></h3>
-          <ul class="chips"><li>PHP</li><li>Laravel 12</li><li>Eloquent</li><li>REST APIs</li><li>Sanctum</li><li>Spatie Permissions</li><li>RBAC</li></ul></div>
+          <ul class="chips">
+            <li><i class="devicon-php-plain colored"></i>PHP</li>
+            <li><i class="devicon-laravel-plain colored"></i>Laravel 12</li>
+            <li><i class="devicon-laravel-plain colored"></i>Eloquent</li>
+            <li>REST APIs</li>
+            <li><i class="devicon-laravel-plain colored"></i>Sanctum</li>
+            <li>Spatie Permissions</li>
+            <li>RBAC</li>
+          </ul></div>
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></i><span data-i18n="skill-frontend">Frontend</span></h3>
-          <ul class="chips"><li>React.js</li><li>Material UI</li><li>Vue.js</li><li>Angular</li><li>Next.js</li><li>Ionic</li><li>HTML5 / CSS3</li></ul></div>
+          <ul class="chips">
+            <li><i class="devicon-react-original colored"></i>React.js</li>
+            <li><i class="devicon-materialui-plain colored"></i>Material UI</li>
+            <li><i class="devicon-vuejs-plain colored"></i>Vue.js</li>
+            <li><i class="devicon-angularjs-plain colored"></i>Angular</li>
+            <li><i class="devicon-nextjs-plain"></i>Next.js</li>
+            <li><i class="devicon-ionic-original colored"></i>Ionic</li>
+            <li><i class="devicon-html5-plain colored"></i>HTML5</li>
+            <li><i class="devicon-css3-plain colored"></i>CSS3</li>
+          </ul></div>
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></i><span data-i18n="skill-data">Data</span></h3>
-          <ul class="chips"><li>MySQL</li><li>Database design</li><li>Query optimization</li><li>Transactions</li><li>Concurrency control</li></ul></div>
+          <ul class="chips">
+            <li><i class="devicon-mysql-plain colored"></i>MySQL</li>
+            <li>Database design</li>
+            <li>Query optimization</li>
+            <li>Transactions</li>
+            <li>Concurrency control</li>
+          </ul></div>
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0"/></svg></i><span data-i18n="skill-devops">DevOps</span></h3>
-          <ul class="chips"><li>Git</li><li>GitHub Actions</li><li>CI/CD</li><li>Linux</li><li>SSH</li><li>DirectAdmin</li><li>Cloudflare</li><li>SSL</li></ul></div>
+          <ul class="chips">
+            <li><i class="devicon-git-plain colored"></i>Git</li>
+            <li><i class="devicon-github-original"></i>GitHub Actions</li>
+            <li>CI/CD</li>
+            <li><i class="devicon-linux-plain colored"></i>Linux</li>
+            <li>SSH</li>
+            <li>DirectAdmin</li>
+            <li><i class="devicon-cloudflare-plain colored"></i>Cloudflare</li>
+            <li>SSL</li>
+          </ul></div>
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></i><span data-i18n="skill-integrations">Integrations</span></h3>
-          <ul class="chips"><li>SkipCash</li><li>Payments &amp; payouts</li><li>reCAPTCHA v3</li><li>Push / Email / WhatsApp / SMS</li><li>LLM APIs</li></ul></div>
+          <ul class="chips">
+            <li>SkipCash</li>
+            <li>Payments &amp; payouts</li>
+            <li>reCAPTCHA v3</li>
+            <li>Push / Email / WhatsApp / SMS</li>
+            <li>LLM APIs</li>
+          </ul></div>
         <div class="skill"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></i><span data-i18n="skill-docs">Documentation</span></h3>
-          <ul class="chips"><li>Technical writing</li><li>Help centers</li><li>Docusaurus</li><li>Fumadocs</li><li>Jira</li><li>Agile/Scrum</li></ul></div>
+          <ul class="chips">
+            <li>Technical writing</li>
+            <li>Help centers</li>
+            <li><i class="devicon-docusaurus-plain colored"></i>Docusaurus</li>
+            <li>Fumadocs</li>
+            <li><i class="devicon-jira-plain colored"></i>Jira</li>
+            <li>Agile/Scrum</li>
+          </ul></div>
       </div>
     </div>
   </section>
@@ -493,6 +545,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       'car-title':'Carpooling app','car-kind':'Confledis, Paris, 2020',
       'car-desc':'Web and mobile app from design to launch, with maps, ride price calculation, online payments and ticketing, built in a Scrum team.',
       'sec-exp':'Experience','sec-exp-sub':'5+ years across product teams, a consultancy and my own clients.',
+      'job1-when':'Current',
       'job1-title':'Full-Stack Software Engineer',
       'job1-desc':'Building Sportra and Evencia, two production SaaS platforms live in Qatar: APIs, payments and payouts, CI/CD, servers and documentation.',
       'job2-title':'Backend Laravel Developer',
@@ -536,6 +589,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       'car-title':'Application de covoiturage','car-kind':'Confledis, Paris, 2020',
       'car-desc':'Application web et mobile de la conception au lancement : cartes, calcul du prix, paiement en ligne et billetterie, développée en équipe Scrum.',
       'sec-exp':'Expérience','sec-exp-sub':'Plus de 5 ans au sein d\'équipes produit, d\'un cabinet de conseil et avec mes propres clients.',
+      'job1-when':'En poste',
       'job1-title':'Ingénieure Full-Stack',
       'job1-desc':'Développement de Sportra et Evencia, deux plateformes SaaS en production au Qatar : APIs, paiements, CI/CD, serveurs et documentation.',
       'job2-title':'Développeuse Backend Laravel',
