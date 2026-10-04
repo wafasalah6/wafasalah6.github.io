@@ -68,11 +68,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;color:var(--muted);box-shadow:var(--shadow);margin-bottom:26px}
 .status .pulse{width:22px;height:22px;border-radius:50%;background:color-mix(in srgb,var(--ok) 18%,transparent);display:grid;place-items:center}
 .status .pulse::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
-.profile-wrap{display:inline-block;position:relative;margin-bottom:28px}
-.profile-wrap::before{content:"";position:absolute;inset:-3px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent2));z-index:0}
-.profile-photo{width:200px;height:240px;border-radius:18px;object-fit:cover;object-position:center center;display:block;position:relative;z-index:1;border:3px solid var(--bg2);box-shadow:var(--shadow)}
-@media(max-width:600px){.profile-photo{width:160px;height:190px}}
-.hero h1{font-size:clamp(42px,6.4vw,78px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:0 0 22px}
+.profile-wrap{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.profile-photo{width:132px;height:132px;border-radius:18px;object-fit:cover;object-position:center center;display:block;border:1.5px solid color-mix(in srgb,var(--accent2) 45%,transparent);box-shadow:0 2px 6px rgba(15,23,42,.06),0 14px 28px -14px rgba(30,58,138,.22)}
+.profile-badge{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.profile-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+@media(max-width:600px){.profile-photo{width:104px;height:104px;border-radius:16px}.profile-badge{font-size:11.5px;padding:5px 10px}}
+.hero h1{font-size:clamp(42px,6.4vw,78px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:0 0 24px}
 .hero h1 .grad{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lede{font-size:clamp(18px,1.9vw,20px);color:var(--muted);max-width:46ch;margin:0 0 32px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
@@ -83,7 +84,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* hero visual: stacked UI cards */
 .stack-vis{position:relative;height:480px}
-.ui{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px}
+.ui{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 1px 2px rgba(18,20,28,.03),0 10px 26px -14px rgba(18,20,28,.14);padding:18px}
 .ui .top{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:12px}
 .ui .tag{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:999px;background:var(--bg)}
 .ui.booking{top:0;left:0;width:62%;z-index:1}
@@ -224,7 +225,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <div class="wrap hero">
     <div class="hero-grid">
       <div>
-        <div class="profile-wrap"><img src="wafa-photo.png" alt="Wafa Salah" class="profile-photo"></div>
+        <div class="profile-wrap">
+          <img src="wafa-photo.png" alt="Wafa Salah" class="profile-photo">
+          <span class="profile-badge" data-i18n="profile-badge">Full-Stack Engineer</span>
+        </div>
         <h1 data-i18n-html="hero-h1">Hi, I'm Wafa. I build <span class="grad">backends that move money</span> and people.</h1>
         <p class="lede" data-i18n="hero-lede">Full-stack software engineer with 5+ years in PHP, Laravel, React.js and Vue.js. Today I build Sportra and Evencia, two platforms live in Qatar.</p>
         <div class="btns">
@@ -523,6 +527,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   var t={
     en:{
       'nav-work':'Work','nav-experience':'Experience','nav-skills':'Skills','nav-background':'Background','nav-contact':'Contact me',
+      'profile-badge':'Full-Stack Engineer',
       'hero-h1':'Hi, I\'m Wafa. I build <span class="grad">backends that move money</span> and people.',
       'hero-lede':'Full-stack software engineer with 5+ years in PHP, Laravel, React.js and Vue.js. Today I build Sportra and Evencia, two platforms live in Qatar.',
       'btn-cv':'Preview CV',
@@ -567,6 +572,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     },
     fr:{
       'nav-work':'Projets','nav-experience':'Expérience','nav-skills':'Compétences','nav-background':'Parcours','nav-contact':'Me contacter',
+      'profile-badge':'Ingénieure Full-Stack',
       'hero-h1':'Bonjour, je suis Wafa. Je construis des <span class="grad">backends qui font circuler l\'argent</span> et les gens.',
       'hero-lede':'Ingénieure full-stack avec plus de 5 ans en PHP, Laravel, React.js et Vue.js. Je développe actuellement Sportra et Evencia, deux plateformes en production au Qatar.',
       'btn-cv':'Voir le CV',
